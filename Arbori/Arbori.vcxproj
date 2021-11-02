@@ -150,6 +150,7 @@
     <ClCompile Include="Arbori.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BST.h" />
     <ClInclude Include="Ierarhie.h" />
     <ClInclude Include="TreeNode.h" />
   </ItemGroup>

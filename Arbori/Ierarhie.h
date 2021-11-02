@@ -51,5 +51,48 @@ struct Ierarhie {
 		return false;
 	}
 
+	void preorder(Node* node)
+	{
+		if (node == NULL)
+			return;
 
+		cout << node->data << endl;
+
+		preorder(node->left);
+		preorder(node->right);
+	}
+
+	void inorder(Node* node)
+	{
+		if (node == NULL)
+			return;
+
+		inorder(node->left);
+		cout << node->data << endl;
+		inorder(node->right);
+	}
+
+	void postorder(Node* node)
+	{
+		if (node == NULL)
+			return;
+		postorder(node->left);
+		postorder(node->right);
+		cout << node->data << endl;
+	}
+
+	int nivel(Node* node, int data) 
+	{
+		if (node == NULL)
+			return 0;
+		if (node->data == data)
+		{
+			return nivel(NULL, data);
+		}
+		else if (find(node->left, data) != NULL)
+			return 1 + nivel(node->left, data);
+		else if (find(node->right, data) != NULL)
+			return 1 + nivel(node->right, data);
+		return -1;
+	}
 };
